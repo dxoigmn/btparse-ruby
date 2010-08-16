@@ -1,0 +1,26 @@
+btparse-ruby
+============
+
+btparse-ruby is a ruby wrapper for btparse.
+
+    http://www.gerg.ca/software/btOOL/
+
+For now, btparse-ruby ignores comments, preambles, and strings. It does, 
+however, expand strings with macros. There are also methods to split author
+lists and purify strings.
+
+Example Usage
+-------------
+
+    require 'btparse-ruby'
+
+    entries = BibTeX.parse(file)
+
+    entries.each do |entry|
+      puts entry.type
+      puts entry.key
+
+      entry.fields.each do |name, value|
+        puts "  #{name} = #{value}"
+      end
+    end
